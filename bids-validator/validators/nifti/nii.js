@@ -85,6 +85,17 @@ export default function NIFTI(
         }),
       )
     }
+    if (!mergedDictionary.hasOwnProperty('TotalAcquiredPairs') ) {
+      issues.push(
+        new Issue({
+          file: file,
+          code: 181,
+          reason:
+            "You must define 'TotalAcquiredPairs' for this file. If you don't provide this information CBF quantification will not be possible. " +
+            sidecarMessage,
+        }),
+      )      
+    }
     if (
       mergedDictionary.hasOwnProperty('ArterialSpinLabelingType') &&
       mergedDictionary['ArterialSpinLabelingType'].constructor === String

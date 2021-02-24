@@ -273,21 +273,6 @@ const validateTsvColumns = function(tsvs, jsonContentsDict, headers) {
           }
         }
 
-        if ( mergedDict.hasOwnProperty('TotalAcquiredVolumes') ) {
-          let TotalAcquiredVolumes = mergedDict['TotalAcquiredVolumes']
-          const TotalAcquiredVolumesLength = TotalAcquiredVolumes.length
-          if (TotalAcquiredVolumesLength !== rows.length -1) {
-            tsvIssues.push(
-              new Issue({
-                file: file,
-                code: 181,
-                reason:
-                  "''TotalAcquiredVolumes' for this file do not match the TSV lenght. Please be sure that the size of the TotalAcquiredVolumes array in the json corresponds to the number of volume listed in the tsv file." 
-              }),
-            )
-          }
-        }
-
         if ( 
              mergedDict.hasOwnProperty('EchoTime') && 
              mergedDict['EchoTime'].constructor === Array  

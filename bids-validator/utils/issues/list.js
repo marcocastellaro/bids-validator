@@ -925,9 +925,9 @@ export default {
     reason: "The 'BackgroundSuppressionNumberPulses' field is not consistent with the length of 'BackgroundSuppressionPulseTime'. 'BackgroundSuppressionNumberPulses' is the number of background suppression pulses used. Note that this excludes any effect of background suppression pulses applied before the labeling.",
   },
   181: {
-    key: 'TOTAL_ACQUIRED_VOLUMES_NOT_CONSISTENT',
-    severity: 'warning',
-    reason: "The number of values for 'TotalAcquiredVolumes' for this file does not match number of volumes in the 'sub-<label>[_ses-<label>][_acq-<label>][_rec-<label>][_run-<index>]_aslcontext.tsv'. 'TotalAcquiredVolumes' is the original number of 3D volumes acquired for each volume defined in the 'sub-<label>[_ses-<label>][_acq-<label>][_rec-<label>][_run-<index>]_aslcontext.tsv'.",
+    key: 'TOTAL_ACQUIRED_PAIRS_MISSING',
+    severity: 'error',
+    reason: "You must define 'TotalAcquiredPairs' for this file. 'TotalAcquiredPairs' is the total number of acquired control-label pairs. A single pair consists of a single control and a single label volume.",
   },
   182: {
     key: 'MAGNETIC_FIELD_STRENGTH_MISSING',
